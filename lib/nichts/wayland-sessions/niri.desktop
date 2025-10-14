@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Niri
+Comment=The best scrolling WM out there
+Exec=niri-session
+Type=Application
+DesktopNames=Niri
+Keywords=scrolling;wayland;compositor;

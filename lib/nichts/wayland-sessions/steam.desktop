@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Steam
+Comment=A digital distribution platform
+Exec=/nix/store/iidr6bdcl8imwbaaw4nx3nkkg512vyza-steam-gamescope/bin/steam-gamescope
+Type=Application
