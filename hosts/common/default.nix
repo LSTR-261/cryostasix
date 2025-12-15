@@ -1,7 +1,6 @@
 {
+  config,
   pkgs,
-  lib,
-  inputs,
   outputs,
   username,
   hostname,
@@ -13,21 +12,24 @@
   ];
 
   boot = {
+    plymouth.enable = true;
+    # kernelPackages = pkgs.linuxPackages_latest;
     loader.limine = {
       enable = true;
       efiSupport = true;
       efiInstallAsRemovable = true;
       style = {
-        interface.branding = "CRYOSTASIX::PENROSE";
+        interface = {
+          branding = "CRYOSTASIX::PENROSE";
+        };
       };
     };
-    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   networking = {
-    hostName = hostname; # System designation, received from the core.
+    hostName = hostname;
     networkmanager.enable = true;
-    # wireless.enable = true; # Enable if wireless capabilities are required.
+    # wireless.enable = true;
   };
 
   programs.nh = {
@@ -36,10 +38,6 @@
     clean.extraArgs = "--keep-since 7d --keep 5";
     flake = "/home/${username}/.config/cryostasix/";
   };
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-  ];
 
   services.openssh.enable = true;
   security.polkit.enable = true;
@@ -61,9 +59,13 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes"; # Enable modern Nix interface.
-      substituters = ["https://nix-community.cachix.org"];
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://niri.cachix.org"
+      ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
       ];
       trusted-users = ["root" "${username}"];
     };

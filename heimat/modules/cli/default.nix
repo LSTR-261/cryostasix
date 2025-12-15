@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./nushell.nix
     ./utilites.nix
@@ -8,6 +9,10 @@
   programs.carapace = {
     enable = true;
     enableFishIntegration = true;
+  };
+  programs.television = {
+    enable = true;
+    settings.ui.use_nerd_font_icons = true;
   };
 
   programs.atuin = {
@@ -19,13 +24,13 @@
     enable = true;
   };
 
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = {
-      add_newline = true;
-    };
-  };
+  # programs.starship = {
+  #   enable = true;
+  #   enableFishIntegration = true;
+  #   settings = {
+  #     add_newline = true;
+  #   };
+  # };
 
   programs.zoxide = {
     enable = true;
@@ -37,13 +42,15 @@
 
   programs.yazi = {
     enable = true;
-    package = pkgs.yazi.override {_7zz = pkgs._7zz-rar;};
+    package = pkgs.yazi.override { _7zz = pkgs._7zz-rar; };
     enableFishIntegration = true;
   };
 
   home.packages = with pkgs; [
+    fishPlugins.autopair
+    fishPlugins.tide
     btop-cuda
-    du-dust
+    dust
     eza
     fd
     fend

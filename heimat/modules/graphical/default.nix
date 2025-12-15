@@ -7,7 +7,6 @@
     ./media.nix
     ./office.nix
     ./theme.nix
-    ./walker.nix
   ];
 
   home.sessionPath = [];

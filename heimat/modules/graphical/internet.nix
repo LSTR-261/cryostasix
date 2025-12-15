@@ -34,6 +34,5 @@
 
   home.packages = with pkgs; [
     wiki-tui
-    protonvpn-gui
   ];
 }

@@ -11,7 +11,6 @@
       office.enable = true;
       gaming.enable = true;
       flatpak.enable = true;
-      walker.enable = true;
       media.enable = true;
     };
   };

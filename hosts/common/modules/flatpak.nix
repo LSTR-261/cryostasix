@@ -12,9 +12,8 @@ in {
   config = mkIf cfg.enable {
     services.flatpak.enable = true;
     xdg.portal = {
-      # xdg desktop intergration (required for flatpak)
       enable = true;
-      # config.common.default = ["gtk"];
+      # config.common.default = "*";
       extraPortals = with pkgs; [
         xdg-desktop-portal-gnome
       ];

@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     aria2
     dysk
+    caligula
     nitch
     fastfetch
     nerdfetch
@@ -20,6 +21,8 @@
     almonds
     lolcat
     viu
+    # opencode
+    unzip
   ];
 
   programs.nix-search-tv.enable = true;

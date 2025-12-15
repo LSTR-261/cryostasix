@@ -4,10 +4,8 @@
   ];
 
   home.packages = with pkgs; [
-    nixd
     marksman
     markdown-oxide
-    alejandra
     ripgrep
     scooter
     lazygit

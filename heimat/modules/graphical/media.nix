@@ -12,19 +12,21 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      spotify
       inkscape-with-extensions
       krita
       # pamixer
       pavucontrol
-      tenacity
+      # tenacity
       musescore
+      muse-sounds-manager
+
       # kdePackages.kdenlive
       yt-dlp
       gimp3-with-plugins
       # stremio
       qbittorrent-enhanced
-      calibre
+      # calibre
+      vlc
     ];
 
     programs = {

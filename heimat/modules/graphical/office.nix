@@ -19,6 +19,7 @@ in {
       mdp
       onionshare
       freerdp
+      trilium-desktop
     ];
 
     programs.onlyoffice.enable = true;

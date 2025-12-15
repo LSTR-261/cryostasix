@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.dms.homeModules.dankMaterialShell.default
     inputs.dms.homeModules.dankMaterialShell.niri
@@ -14,6 +15,6 @@
       enableSpawn = true;
       enableKeybinds = true;
     };
-    quickshell.package = inputs.quickshell.packages.${pkgs.system}.default;
+    # quickshell.package = inputs.quickshell.packages.${pkgs.system}.default;
   };
 }

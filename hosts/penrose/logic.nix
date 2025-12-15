@@ -5,5 +5,5 @@ rec {
     "HDMI-A-1, 1920x1080@60, 320x1080, 1.25"
   ];
   wallpaper = "Signalis-logo.png";
-  theme = "gruvbox-dark-medium";
+  theme = "rose-pine-moon";
 }

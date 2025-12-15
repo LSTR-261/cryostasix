@@ -17,7 +17,7 @@
       };
       open = false;
       nvidiaSettings = false;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      # package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
     nvidia-container-toolkit.enable = true;
   };

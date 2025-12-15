@@ -1,6 +1,7 @@
 {
   pkgs,
   email,
+  username,
   ...
 }: {
   imports = [
@@ -25,12 +26,9 @@
 
   programs.git = {
     enable = true;
-    difftastic.enable = true;
-    userName = "lstr-261";
-    userEmail = "${email}";
-    extraConfig = {
-      core.excludesfile = "~/.gitignore_global";
-      init.defaultBranch = "master";
+    settings.user = {
+      inherit email;
+      name = "${username}";
     };
   };
 
