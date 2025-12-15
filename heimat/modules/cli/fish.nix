@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.fish = {
     enable = true;
@@ -17,4 +18,8 @@
       };
     };
   };
+  home.packages = with pkgs; [
+    fishPlugins.autopair
+    fishPlugins.tide
+  ];
 }

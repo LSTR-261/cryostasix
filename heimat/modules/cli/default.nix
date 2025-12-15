@@ -47,8 +47,6 @@
   };
 
   home.packages = with pkgs; [
-    fishPlugins.autopair
-    fishPlugins.tide
     btop-cuda
     dust
     eza
